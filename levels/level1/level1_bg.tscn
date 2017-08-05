@@ -25,10 +25,10 @@ tracks/1/path = NodePath("earth:rect/pos")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 180 ),
+"times": FloatArray( 0, 45.3 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -70, 50 ), Vector2( -1094, 50 ) ]
+"values": [ Vector2( 494, -919 ), Vector2( -2000, -300 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("moon:rect/pos")
@@ -49,9 +49,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
+margin/left = -128.853
 margin/top = 0.0
-margin/right = 1538.0
+margin/right = 1409.15
 margin/bottom = 600.0
 texture = ExtResource( 1 )
 stretch_mode = 0
@@ -62,24 +62,25 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 256.0
+margin/left = -194.987
 margin/top = 0.0
-margin/right = 1321.0
+margin/right = 870.013
 margin/bottom = 600.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 
 [node name="earth" type="TextureFrame" parent="."]
 
-rect/scale = Vector2( 0.325, 0.325 )
+rect/rotation = -40.0
+rect/scale = Vector2( 0.7, 0.7 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -70.0
-margin/top = 50.0
-margin/right = 3486.0
-margin/bottom = 2050.0
+margin/left = -2000.0
+margin/top = -300.0
+margin/right = 2048.0
+margin/bottom = 1878.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
