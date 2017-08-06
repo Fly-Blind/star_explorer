@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://levels/level1/stars_layer.png" type="Texture" id=1]
 [ext_resource path="res://levels/level1/moonpixelart.png" type="Texture" id=2]
-[ext_resource path="res://levels/level1/earth_layer.png" type="Texture" id=3]
+[ext_resource path="res://levels/level1/lenseflarespace.png" type="Texture" id=3]
+[ext_resource path="res://levels/level1/earth_layer.png" type="Texture" id=4]
+[ext_resource path="res://levels/level1/lenseflareearth.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -38,7 +40,37 @@ tracks/2/keys = {
 "times": FloatArray( 0, 180 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 256, 0 ), Vector2( -1536, 0 ) ]
+"values": [ Vector2( 256, 0 ), Vector2( -1536, 619 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("flare_space:rect/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 14.7, 38.3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -595, 75 ), Vector2( -928, 232 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("flare_earth:rect/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 16.5, 38.3 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -618, 85 ), Vector2( -927, 233 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("flare_earth:visibility/visible")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 16.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -49,9 +81,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -128.853
+margin/left = -46.9333
 margin/top = 0.0
-margin/right = 1409.15
+margin/right = 1491.07
 margin/bottom = 600.0
 texture = ExtResource( 1 )
 stretch_mode = 0
@@ -62,11 +94,24 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -194.987
-margin/top = 0.0
-margin/right = 870.013
-margin/bottom = 600.0
+margin/left = 91.7333
+margin/top = 56.7417
+margin/right = 1156.73
+margin/bottom = 656.742
 texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="flare_space" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -620.398
+margin/top = 86.9746
+margin/right = 403.602
+margin/bottom = 686.975
+texture = ExtResource( 3 )
 stretch_mode = 0
 
 [node name="earth" type="TextureFrame" parent="."]
@@ -77,11 +122,24 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -2000.0
-margin/top = -300.0
-margin/right = 2048.0
-margin/bottom = 1878.0
-texture = ExtResource( 3 )
+margin/left = -414.411
+margin/top = -693.536
+margin/right = 3633.59
+margin/bottom = 1484.46
+texture = ExtResource( 4 )
+stretch_mode = 0
+
+[node name="flare_earth" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -618.0
+margin/top = 85.0
+margin/right = 406.0
+margin/bottom = 685.0
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

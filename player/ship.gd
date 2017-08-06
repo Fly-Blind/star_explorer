@@ -10,7 +10,7 @@ var ship_size #an empty variable to hold the size of the ship
 var pew_pew = 0 #for testing the fire button. to be removed later, or reprovisioned
 var fire_flip_flop = false # a boolean variable to block spamming fire on hold-down. may not be needed
 const SHIP_SPEED_Y = 300 #a constant for how far the ship moves in pixels/sec when used in the process variable
-var ship_loc #an empty variable for where the ship currently is to start.
+var ship_loc = get_pos() #a variable for where the ship currently is to start.
 
 func _ready():
 	# Called every time the node is added to the scene.
