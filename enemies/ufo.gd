@@ -17,8 +17,19 @@ func build():
 	pass
 	
 func _on_enemy_ufo_area_enter( area ):
+	
 	pass # replace with function body
 	
 func _process(delta):
 	hover += delta*6
 	translate(Vector2(UFO_VEL*delta, sin(hover)*6))
+
+
+func _on_visibility_enter_screen():
+	set_process(true)
+	pass # replace with function body
+
+
+func _on_visibility_exit_screen():
+	queue_free()
+	pass # replace with function body

@@ -67,8 +67,17 @@ func _process(delta):
 	#get_node("meteor").set_pos(met_loc)
 	met_loc -= Vector2(met_vel*delta, 0)
 	set_pos(met_loc)
-	if met_loc.x < -(get_node("sprite").get_texture().get_size().x*0.5):
-		queue_free()
+	#if met_loc.x < -(get_node("sprite").get_texture().get_size().x*0.5):
+	#	queue_free()
 
 func destroy():
 	queue_free()
+
+func _on_visibility_enter_screen():
+	set_process(true)
+	pass # replace with function body
+
+
+func _on_visibility_exit_screen():
+	queue_free()
+	pass # replace with function body
