@@ -10,7 +10,7 @@ var stomp_it
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	set_process(true)
+	#set_process(true)
 	screen_size = get_viewport_rect().size
 	stomp_it = round(rand_range(2, 4))
 	pass
