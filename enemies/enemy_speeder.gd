@@ -1,5 +1,13 @@
 extends Area2D
 
+#|---------------------------------------------
+#| Name: enemy_speeder.gd
+#| By: FlyBlind
+#| Desc: A script linked to a node. Built
+#|       to make a speeder sprite move across
+#|       the screen.
+#|---------------------------------------------
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"

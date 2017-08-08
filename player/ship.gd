@@ -1,5 +1,12 @@
 extends Node2D
-
+#|---------------------------------------------
+#| Name: ship.gd
+#| By: FlyBlind
+#| Desc: A script linked to a node. 
+#|       Used to control the main character's
+#|       ship, and do cool stuff like shoot
+#|       and move, and maybe more later
+#|---------------------------------------------
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
