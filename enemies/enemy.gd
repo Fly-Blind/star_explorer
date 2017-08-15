@@ -49,9 +49,9 @@ func destroy():
 
 func _on_visibility_enter_screen():
 	set_process(true)
-	pass # replace with function body
+
 
 
 func _on_visibility_exit_screen():
 	queue_free()
-	pass # replace with function body
+

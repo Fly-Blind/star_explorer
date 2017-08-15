@@ -21,7 +21,6 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_process(true)
-	pass
 
 func build():
 	pass
@@ -37,9 +36,7 @@ func _process(delta):
 
 func _on_visibility_enter_screen():
 	set_process(true) #start moving the ship now that the ship can be seen
-	pass # replace with function body
 
 
 func _on_visibility_exit_screen():
 	queue_free() #unload the ship to save memory
-	pass # replace with function body

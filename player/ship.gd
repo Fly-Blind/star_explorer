@@ -28,7 +28,7 @@ func _ready():
 	blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
 	set_process(true) #set this script to call the _process function every frame draw
 	set_process_input(true) #set this script to execute the _input function every time input happens
-	pass
+
 
 func _process(delta):
 	#NOTE: delta is used to adjust movement calculations to be in pixels/s vs. pixels/frame
@@ -72,7 +72,7 @@ func _on_ship_area_enter( area ):
 	if area.has_method("destroy"):
 		area.destroy()
 		destroy()
-	pass # replace with function body
+
 
 func destroy():
 	#ship go poof/boom

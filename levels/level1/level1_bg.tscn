@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://levels/level1/stars_layer.png" type="Texture" id=1]
-[ext_resource path="res://levels/level1/moonpixelart.png" type="Texture" id=2]
-[ext_resource path="res://levels/level1/lenseflarespace.png" type="Texture" id=3]
-[ext_resource path="res://levels/level1/earth_layer.png" type="Texture" id=4]
-[ext_resource path="res://levels/level1/lenseflareearth.png" type="Texture" id=5]
+[ext_resource path="res://levels/level1/lenseflarespace.png" type="Texture" id=2]
+[ext_resource path="res://levels/level1/moonpixelart.png" type="Texture" id=3]
+[ext_resource path="res://levels/level1/lenseflareearth.png" type="Texture" id=4]
+[ext_resource path="res://levels/level1/earth_layer.png" type="Texture" id=5]
 [ext_resource path="res://levels/level1/atmosphere.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -48,27 +48,27 @@ tracks/3/path = NodePath("flare_space:rect/pos")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 14.7, 38.3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( -595, 75 ), Vector2( -928, 232 ) ]
+"values": [ Vector2( -305, 41 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("flare_earth:rect/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 16.5, 38.3 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -618, 85 ), Vector2( -927, 233 ) ]
+"values": [ Vector2( -305, 41 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("flare_earth:visibility/visible")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 16.5 ),
+"times": FloatArray( 0, 50.7 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -92,24 +92,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
+margin/left = -148.017
 margin/top = 0.0
-margin/right = 1538.0
+margin/right = 1389.98
 margin/bottom = 600.0
 texture = ExtResource( 1 )
-stretch_mode = 0
-
-[node name="moon" type="TextureFrame" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 256.0
-margin/top = 0.0
-margin/right = 1321.0
-margin/bottom = 600.0
-texture = ExtResource( 2 )
 stretch_mode = 0
 
 [node name="flare_space" type="TextureFrame" parent="."]
@@ -118,11 +105,37 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -595.0
-margin/top = 75.0
-margin/right = 429.0
-margin/bottom = 675.0
+margin/left = -305.0
+margin/top = 41.0
+margin/right = 719.0
+margin/bottom = 641.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="moon" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -262.061
+margin/top = 178.951
+margin/right = 802.939
+margin/bottom = 778.951
 texture = ExtResource( 3 )
+stretch_mode = 0
+
+[node name="flare_earth" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -305.0
+margin/top = 41.0
+margin/right = 719.0
+margin/bottom = 641.0
+texture = ExtResource( 4 )
 stretch_mode = 0
 
 [node name="earth" type="TextureFrame" parent="."]
@@ -133,38 +146,24 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 494.0
-margin/top = -919.0
-margin/right = 4542.0
-margin/bottom = 1259.0
-texture = ExtResource( 4 )
-stretch_mode = 0
-
-[node name="flare_earth" type="TextureFrame" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 1024.0
-margin/bottom = 600.0
+margin/left = -2000.0
+margin/top = -300.0
+margin/right = 2049.0
+margin/bottom = 1878.0
 texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="atmosphere" type="TextureFrame" parent="."]
 
-visibility/opacity = 0.3
+visibility/opacity = 0.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
+margin/right = 2048.0
+margin/bottom = 1200.0
 texture = ExtResource( 6 )
 stretch_mode = 0
 
