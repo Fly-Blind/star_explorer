@@ -78,3 +78,5 @@ func destroy():
 	#ship go poof/boom
 	queue_free()
 	#other stuff goes here later if required
+
+

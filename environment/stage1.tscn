@@ -130,7 +130,6 @@ transform/pos = Vector2( 9630.3, 122.467 )
 [node name="meteor35 5" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 22624.3, 147.52 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="meteor19" parent="." instance=ExtResource( 2 )]
 
