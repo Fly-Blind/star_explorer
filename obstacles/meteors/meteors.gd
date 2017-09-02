@@ -39,9 +39,11 @@ func _ready():
 	met_vel += MET_CONST+(round(rand_range(-50, 50)))
 	get_node("sprite").set_texture(met_tex)
 	if (met_tex.get_size().x > met_tex.get_size().y):
-		tempcircle.set_radius(met_tex.get_size().x*2)
+		#tempcircle.set_radius(met_tex.get_size().x*2)
+		tempcircle.set_radius(met_tex.get_size().x/2)
 	else:
-		tempcircle.set_radius(met_tex.get_size().y*2)
+		#tempcircle.set_radius(met_tex.get_size().y*2)
+		tempcircle.set_radius(met_tex.get_size().y/2)
 	get_node("CollisionShape2D").set_shape(tempcircle)
 	
 

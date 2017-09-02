@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 48.8141, 20.4984 )
 
 [node name="enemy" type="Area2D"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 4.82971, 0, 0, 2.04283, 0.056946, -0.118152 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -26,8 +26,6 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 0.056946, -0.118152 )
-transform/scale = Vector2( 4.82971, 2.04283 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

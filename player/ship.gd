@@ -42,10 +42,10 @@ func _process(delta):
 	if ((ship_loc.y + ship_size.y*0.5) < screen_size.y and Input.is_action_pressed("player_down")):
 		ship_loc.y += SHIP_SPEED_Y*delta
 		get_node("ship").set_pos(ship_loc)
-	if Input.is_action_pressed("player_right"):
+	if ((ship_loc.x + ship_size.y*0.5) < screen_size.x and Input.is_action_pressed("player_right")):
 		ship_loc.x += (SHIP_SPEED_Y - 60)*delta
 		get_node("ship").set_pos(ship_loc)
-	if Input.is_action_pressed("player_left"):
+	if ((ship_loc.x - ship_size.x*0.5) > 0 and Input.is_action_pressed("player_left")):
 		ship_loc.x -= (SHIP_SPEED_Y + 20)*delta
 		get_node("ship").set_pos(ship_loc)
 		
@@ -72,11 +72,18 @@ func _on_ship_area_enter( area ):
 	if area.has_method("destroy"):
 		area.destroy()
 		destroy()
-
+	print( "thing hit: ", area)
+	pass
 
 func destroy():
 	#ship go poof/boom
 	queue_free()
 	#other stuff goes here later if required
 
+
+func _on_ship_body_enter_shape( body_id, body, body_shape, area_shape ):
+	print("Body hit: ", body)
+	if body.has_method("destroy"):
+		body.destroy()
+		destroy()
 
