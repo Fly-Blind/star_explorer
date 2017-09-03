@@ -17,7 +17,10 @@ var ship_size #an empty variable to hold the size of the ship
 var pew_pew = 0 #for testing the fire button. to be removed later, or reprovisioned
 var fire_flip_flop = false # a boolean variable to block spamming fire on hold-down. may not be needed
 const SHIP_SPEED_Y = 300 #a constant for how far the ship moves in pixels/sec when used in the process variable
-var ship_loc = get_pos() #a variable for where the ship currently is to start.
+var ship_loc #a variable for where the ship currently is to start.
+var ship_loc_start # used to determine the original location for the ship before it's started.
+var sponge_strength = 0 #used for springback strength.
+var is_ship_moving = false #used to determine if the ship is moving from a keypress. 
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -25,6 +28,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	ship_size = get_node("ship/sprite").get_texture().get_size()
 	ship_loc = get_node("ship").get_pos()
+	ship_loc_start = ship_loc
 	blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
 	set_process(true) #set this script to call the _process function every frame draw
 	set_process_input(true) #set this script to execute the _input function every time input happens
@@ -32,23 +36,62 @@ func _ready():
 
 func _process(delta):
 	#NOTE: delta is used to adjust movement calculations to be in pixels/s vs. pixels/frame
+	#
 	#get the ship's current position, for editing, and writing back in later
+	is_ship_moving = false
 	var ship_loc = get_node("ship").get_pos()
 	#check if the user pressed up, and check if they aren't already on the top of the screen
 	if ((ship_loc.y - ship_size.y*0.5) > 0 and Input.is_action_pressed("player_up")):
 		ship_loc.y -= SHIP_SPEED_Y*delta
 		get_node("ship").set_pos(ship_loc)
+		is_ship_moving = true
 	#same thing except down
 	if ((ship_loc.y + ship_size.y*0.5) < screen_size.y and Input.is_action_pressed("player_down")):
 		ship_loc.y += SHIP_SPEED_Y*delta
 		get_node("ship").set_pos(ship_loc)
+		is_ship_moving = true
+	#...and left
 	if ((ship_loc.x + ship_size.y*0.5) < screen_size.x and Input.is_action_pressed("player_right")):
 		ship_loc.x += (SHIP_SPEED_Y - 60)*delta
 		get_node("ship").set_pos(ship_loc)
+		is_ship_moving = true
+	#...well, you get it.
 	if ((ship_loc.x - ship_size.x*0.5) > 0 and Input.is_action_pressed("player_left")):
 		ship_loc.x -= (SHIP_SPEED_Y + 20)*delta
 		get_node("ship").set_pos(ship_loc)
-		
+		is_ship_moving = true
+	 #Now to start the spongy feeling in the game
+	if !is_ship_moving and ship_loc!=ship_loc_start:
+		#I did a nested if, and I hate myself for it.
+		#X Block Negative. Coumpunds as the ship gets farther away from origin
+		if ship_loc.x > ship_loc_start.x - 50:
+			get_node("ship").translate(Vector2(-1 + sponge_strength,0))
+		if ship_loc.x > ship_loc_start.x - 20:
+			get_node("ship").translate(Vector2(-1 + sponge_strength,0))
+		if ship_loc.x > ship_loc_start.x:
+			get_node("ship").translate(Vector2(-1,0))
+		#Same as above, but Y
+		if ship_loc.y > ship_loc_start.y - 50:
+			get_node("ship").translate(Vector2(0,-1 + sponge_strength))
+		if ship_loc.y > ship_loc_start.y - 20:
+			get_node("ship").translate(Vector2(0,-1 + sponge_strength))
+		if ship_loc.y > ship_loc_start.y:
+			get_node("ship").translate(Vector2(0,-1))
+		# Same as above, but positive X
+		if ship_loc.x < ship_loc_start.x + 50:
+			get_node("ship").translate(Vector2(1 + sponge_strength,0))
+		if ship_loc.x < ship_loc_start.x + 20:
+			get_node("ship").translate(Vector2(1 + sponge_strength,0))
+		if ship_loc.x < ship_loc_start.x:
+			get_node("ship").translate(Vector2(1,0))
+		#...Well, you get it.
+		if ship_loc.y < ship_loc_start.y + 50:
+			get_node("ship").translate(Vector2(0,1 + sponge_strength))
+		if ship_loc.y < ship_loc_start.y + 20:
+			get_node("ship").translate(Vector2(0,1 + sponge_strength))
+		if ship_loc.y < ship_loc_start.y:
+			get_node("ship").translate(Vector2(0,1))
+	
 	#VV Can be removed later
 	get_node("Label").set_text(String(pew_pew))
 
