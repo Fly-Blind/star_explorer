@@ -9,10 +9,12 @@ var textbox_right # same as above, but the right face
 var textbox_text # same as above, but for the actual text int he textbox
 var textbox_animate # same as above, but for the animator control node in the textbox scene
 var isDrawOut = false #Used to determine if the animation is drawing out, and to prevent a drawin/drawout loop
+var obj_ship # used to hold a reference to the ship node
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	obj_timer = get_node("general_timer")
+	obj_ship = get_node("ship")
 	textbox_text = get_node("textbox/boxframe/TextInterfaceEngine") #|
 	textbox_right = get_node("textbox/boxframe/faceright")          #|
 	textbox_left = get_node("textbox/boxframe/faceleft")            #|Take all the nodes we should ever touch, and put their connectors
@@ -20,6 +22,7 @@ func _ready():
 	textbox_animate.connect("finished", self, "on_anim_finish") # listen to the animation node in the textbox node, and run on_anim_finish below when an animation finishes playing
 	textbox_text.connect("buff_end", self, "on_text_finish")
 	obj_timer.connect("timeout", self, "on_timer_timeout")
+	obj_ship.connect("exit_tree", self, "player_died")
 	obj_timer.set_wait_time(7)
 	obj_timer.start()
 	pass
@@ -56,3 +59,6 @@ func on_text_finish():
 	isDrawOut = true
 	textbox_text.reset()
 	draw_out()
+
+func player_died():
+	queue_free()

@@ -245,7 +245,7 @@ transform/pos = Vector2( 5113.96, 80.2809 )
 
 [node name="meteor4" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 4426.41, 418.365 )
+transform/pos = Vector2( 4498.18, 1025.33 )
 
 [node name="enemy1" parent="." instance=ExtResource( 3 )]
 

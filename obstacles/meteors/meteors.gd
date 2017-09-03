@@ -46,6 +46,7 @@ func _ready():
 		#tempcircle.set_radius(met_tex.get_size().y*2)
 		tempcircle.set_radius(met_tex.get_size().y/2)
 	get_node("CollisionShape2D").set_shape(tempcircle)
+	
 	met_rot_rate = rand_range(.017, .2)
 	
 
