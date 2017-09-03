@@ -16,6 +16,7 @@ const MET_CONST = 250 #a constant for the velocity of a meteor
 var met_vel = 0 #a velocity variable for this instance of the meteor after we fiddle with velocity a bit.
 var met_loc #a variable for the location of the meteor
 var screen_size #a variable for the screen size.
+var met_rot_rate # a variable holding the rotation speed of the sprite.
 
 const TEXTURE_ARR = [preload("res://obstacles/meteors/meteor1.png"),
  preload("res://obstacles/meteors/meteor2.png"),
@@ -45,6 +46,7 @@ func _ready():
 		#tempcircle.set_radius(met_tex.get_size().y*2)
 		tempcircle.set_radius(met_tex.get_size().y/2)
 	get_node("CollisionShape2D").set_shape(tempcircle)
+	met_rot_rate = rand_range(.017, .2)
 	
 
 func build(start_loc):
@@ -69,6 +71,7 @@ func _process(delta):
 	#get_node("meteor").set_pos(met_loc)
 	met_loc -= Vector2(met_vel*delta, 0)
 	set_pos(met_loc)
+	set_rot(get_rot()+met_rot_rate)
 	#if met_loc.x < -(get_node("sprite").get_texture().get_size().x*0.5):
 	#	queue_free()
 
