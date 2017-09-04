@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://core.gd" type="Script" id=1]
+[ext_resource path="res://resources/main_menu.tscn" type="PackedScene" id=2]
 
 [node name="core" type="Node2D"]
 
 script/script = ExtResource( 1 )
+
+[node name="menu" parent="." instance=ExtResource( 2 )]
 
 

@@ -1,5 +1,16 @@
 extends Node2D
 
+#|---------------------------------------------
+#| Name: Level_1.gd
+#| By: FlyBlind
+#| Desc: Built to host all the components
+#|       of a level. Can be copied and edited
+#|       for future levels. Built to run the level
+#|       like a "budget Western" Player is stationary
+#|       Background is an animation, and enemies
+#|       approach the stationary player ship
+#|---------------------------------------------
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -10,9 +21,11 @@ var textbox_text # same as above, but for the actual text int he textbox
 var textbox_animate # same as above, but for the animator control node in the textbox scene
 var isDrawOut = false #Used to determine if the animation is drawing out, and to prevent a drawin/drawout loop
 var obj_ship # used to hold a reference to the ship node
+var end_scene # used to hold the return scene
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	end_scene = preload("res://resources/main_menu.tscn")
 	obj_timer = get_node("general_timer")
 	obj_ship = get_node("ship")
 	textbox_text = get_node("textbox/boxframe/TextInterfaceEngine") #|
@@ -61,4 +74,7 @@ func on_text_finish():
 	draw_out()
 
 func player_died():
+	var instance = end_scene.instance()
+	get_tree().get_root().add_child(instance)
+	get_tree().set_current_scene(instance)
 	queue_free()
