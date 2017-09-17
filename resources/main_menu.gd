@@ -8,7 +8,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
-	start = preload("res://levels/level1/level_1.tscn")
+	start = preload("res://mov/l1_intro.tscn")
 
 
 func _on_play_button_pressed():
