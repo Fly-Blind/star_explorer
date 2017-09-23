@@ -22,10 +22,13 @@ var textbox_animate # same as above, but for the animator control node in the te
 var isDrawOut = false #Used to determine if the animation is drawing out, and to prevent a drawin/drawout loop
 var obj_ship # used to hold a reference to the ship node
 var end_scene # used to hold the return scene
+var l2_scene
+var obj_level_timer
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	end_scene = preload("res://resources/main_menu.tscn")
+	l2_scene = preload("res://resources/main_menu.tscn")
 	obj_timer = get_node("general_timer")
 	obj_ship = get_node("ship")
 	textbox_text = get_node("textbox/boxframe/TextInterfaceEngine") #|
@@ -34,10 +37,13 @@ func _ready():
 	textbox_animate = get_node("textbox/AnimationPlayer")           #|in a variable so we don't waste computing power calling it all the time
 	textbox_animate.connect("finished", self, "on_anim_finish") # listen to the animation node in the textbox node, and run on_anim_finish below when an animation finishes playing
 	textbox_text.connect("buff_end", self, "on_text_finish")
+	obj_level_timer = get_node("level_timer")
 	obj_timer.connect("timeout", self, "on_timer_timeout")
 	obj_ship.connect("exit_tree", self, "player_died")
 	obj_timer.set_wait_time(7)
 	obj_timer.start()
+	obj_level_timer.set_wait_time(get_node("rail/AnimationPlayer").get_current_animation_length())
+	obj_level_timer.start()
 	pass
 
 func on_timer_timeout():
@@ -78,3 +84,10 @@ func player_died():
 	get_tree().get_root().add_child(instance)
 	get_tree().set_current_scene(instance)
 	queue_free()
+
+func _on_level_timer_timeout():
+	var instance = l2_scene.instance()
+	get_tree().get_root().add_child(instance)
+	get_tree().set_current_scene(instance)
+	queue_free()
+	pass # replace with function body

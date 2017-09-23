@@ -25,4 +25,13 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="level_timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="level_timer" to="." method="_on_level_timer_timeout"]
+
 

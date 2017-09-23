@@ -92,8 +92,7 @@ func _process(delta):
 		if ship_loc.y < ship_loc_start.y:
 			get_node("ship").translate(Vector2(0,1))
 	
-	#VV Can be removed later
-	get_node("Label").set_text(String(pew_pew))
+
 
 func _input(event):
 	if (event.is_action_pressed("player_fire") and !fire_flip_flop):
