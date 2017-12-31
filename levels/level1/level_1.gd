@@ -22,13 +22,14 @@ var textbox_animate # same as above, but for the animator control node in the te
 var isDrawOut = false #Used to determine if the animation is drawing out, and to prevent a drawin/drawout loop
 var obj_ship # used to hold a reference to the ship node
 var end_scene # used to hold the return scene
-var l2_scene
+var next_scene
 var obj_level_timer
+var bool_is_unloading = false # do not assume the player is hit when unloading the scene
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	end_scene = preload("res://resources/main_menu.tscn")
-	l2_scene = preload("res://resources/main_menu.tscn")
+	next_scene = preload("res://resources/inter_level_menu.tscn")
 	obj_timer = get_node("general_timer")
 	obj_ship = get_node("ship")
 	textbox_text = get_node("textbox/boxframe/TextInterfaceEngine") #|
@@ -43,6 +44,10 @@ func _ready():
 	obj_timer.set_wait_time(7)
 	obj_timer.start()
 	obj_level_timer.set_wait_time(get_node("rail/AnimationPlayer").get_current_animation_length())
+	#^ ^ The level is finished once this timer ends. This timer will go off once the background animation finishes
+	#It will know this by polling for the animations play length before the level begins
+	#This means, in the future, this animation can be adjusted, and the timer will automatically
+	#correct itself
 	obj_level_timer.start()
 	pass
 
@@ -80,13 +85,16 @@ func on_text_finish():
 	draw_out()
 
 func player_died():
-	var instance = end_scene.instance()
-	get_tree().get_root().add_child(instance)
-	get_tree().set_current_scene(instance)
-	queue_free()
+	if !bool_is_unloading:
+		var instance = end_scene.instance()
+		get_tree().get_root().add_child(instance)
+		get_tree().set_current_scene(instance)
+		queue_free()
 
 func _on_level_timer_timeout():
-	var instance = l2_scene.instance()
+	bool_is_unloading = true
+	var instance = next_scene.instance()
+	instance.get_node(".").level=1
 	get_tree().get_root().add_child(instance)
 	get_tree().set_current_scene(instance)
 	queue_free()

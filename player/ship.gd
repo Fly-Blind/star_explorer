@@ -63,7 +63,7 @@ func _process(delta):
 	 #Now to start the spongy feeling in the game
 	if !is_ship_moving and ship_loc!=ship_loc_start:
 		#I did a nested if, and I hate myself for it.
-		#X Block Negative. Coumpunds as the ship gets farther away from origin
+		#X Block Negative. Compounds as the ship gets farther away from origin
 		if ship_loc.x > ship_loc_start.x - 50:
 			get_node("ship").translate(Vector2(-1 + sponge_strength,0))
 		if ship_loc.x > ship_loc_start.x - 20:
