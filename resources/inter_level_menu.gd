@@ -4,7 +4,7 @@ extends Control
 # var a = 2
 # var b = "textvar"
 var main_menu # A variable containing the main menu scene.
-var level = 1 # a variable containing the current stage (who called it) as an int. int is 1 based. 0 will force to main menu
+var level = 0 # a variable containing the current stage (who called it) as an int. int is 1 based. 0 will force to main menu
 #0 means testing, or not properly addressed
 var level_scene # a variable containing the next appropriate scene.
 func _ready():
