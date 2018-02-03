@@ -99,3 +99,8 @@ func _on_level_timer_timeout():
 	get_tree().set_current_scene(instance)
 	queue_free()
 	pass # replace with function body
+
+
+func _on_intro_finished():
+	get_node("bgm").play()
+	pass # replace with function body
