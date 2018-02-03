@@ -30,11 +30,12 @@ func _ready():
 	ship_loc = get_node("ship").get_pos()
 	ship_loc_start = ship_loc
 	blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
-	set_process(true) #set this script to call the _process function every frame draw
+	#set_process(true) #set this script to call the _process function every frame draw
+	set_fixed_process(true)
 	set_process_input(true) #set this script to execute the _input function every time input happens
 
 
-func _process(delta):
+func _fixed_process(delta):
 	#NOTE: delta is used to adjust movement calculations to be in pixels/s vs. pixels/frame
 	#
 	#get the ship's current position, for editing, and writing back in later
