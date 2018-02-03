@@ -29,9 +29,15 @@ func _ready():
 	ship_size = get_node("ship/sprite").get_texture().get_size()
 	ship_loc = get_node("ship").get_pos()
 	ship_loc_start = ship_loc
+<<<<<<< HEAD
 	blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
 	#set_process(true) #set this script to call the _process function every frame draw
 	set_fixed_process(true)
+=======
+	#blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
+	blast_resource = preload("res://player/laser_blast.tscn")
+	set_process(true) #set this script to call the _process function every frame draw
+>>>>>>> 2db88b2166d72ec79c5eae8431d117237104aed5
 	set_process_input(true) #set this script to execute the _input function every time input happens
 
 
@@ -102,6 +108,7 @@ func _input(event):
 		blast_sprite = blast_resource.instance()
 		#call the energy_blast scene's build method to apply the position. make it the nose of the ship.
 		blast_sprite.build(Vector2(get_node("ship").get_pos().x + ship_size.x*0.5, get_node("ship").get_pos().y), screen_size.x)
+		blast_sprite.get_node("SamplePlayer").play("lasersfx")
 		#fire up the new instance of the blast
 		add_child(blast_sprite)
 		#flip the boolean to say the space bar is down so fire doesn't spam
