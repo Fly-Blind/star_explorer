@@ -12,7 +12,26 @@ script/script = ExtResource( 1 )
 
 [node name="rail" parent="." instance=ExtResource( 2 )]
 
+editor/display_folded = true
+
 [node name="background" parent="." instance=ExtResource( 3 )]
+
+[node name="meteor35 2" parent="background"]
+
+visibility/visible = false
+script/script = null
+
+[node name="meteor35 3" parent="background"]
+
+visibility/visible = false
+
+[node name="meteor35 6" parent="background"]
+
+visibility/visible = false
+
+[node name="meteor35 8" parent="background"]
+
+visibility/visible = false
 
 [node name="ship" parent="." instance=ExtResource( 4 )]
 
@@ -35,3 +54,4 @@ autostart = false
 [connection signal="timeout" from="level_timer" to="." method="_on_level_timer_timeout"]
 
 
+[editable path="background"]

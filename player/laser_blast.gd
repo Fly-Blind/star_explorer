@@ -9,7 +9,7 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-const BLAST_SPEED = 500 # constant for speed of the bullet
+const BLAST_SPEED = 1500 # constant for speed of the bullet
 var end_loc #variable passed in to say where the blast ends
 
 
@@ -19,13 +19,16 @@ func _ready():
 	set_process(true) #set the node to perform a task once per frame
 
 
+
 func build(start, end):
 		get_node("blast").set_pos(start) #set the beginning of the laser blast
 		end_loc = end #set the end where the node must unload itself
+		
 
 func _process(delta):
 	#a dirty one liner function to simply move the bullet forward. No variables are declared to do the work.
-	get_node("blast").set_pos(Vector2(get_node("blast").get_pos().x + BLAST_SPEED*delta, get_node("blast").get_pos().y))
+	#get_node("blast").set_pos(Vector2(get_node("blast").get_pos().x + BLAST_SPEED*delta, get_node("blast").get_pos().y))
+	get_node("blast").translate(Vector2(BLAST_SPEED*delta, 0))
 	#^ This is generally a no-no because it's hard to read ^
 	
 	if (get_node("blast").get_pos().x > end_loc):

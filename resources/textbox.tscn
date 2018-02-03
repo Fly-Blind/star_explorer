@@ -124,7 +124,6 @@ tracks/4/keys = {
 
 [node name="boxframe" type="TextureFrame" parent="."]
 
-visibility/visible = false
 visibility/opacity = 0.5
 focus/ignore_mouse = true
 focus/stop_mouse = true

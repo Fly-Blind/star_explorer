@@ -57,14 +57,14 @@ func on_timer_timeout():
 
 func text():
 	#textbox_text.buff_text("Hi! We're the Dawson Brothers of Dawson Brothers Criminal Law. We've never won a single case, but that's why we're so cheap! Call Now!", 0.02)
-	textbox_text.buff_text("H1! ", 0.02)
+	textbox_text.buff_text("Craig!! ", 0.02)
 	textbox_text.buff_silence(1)
-	textbox_text.buff_text("We're the Dawson Brothers of Dawson Brothers Criminal Law. ", 0.02)
+	textbox_text.buff_text("What?! ", 0.02)
 	textbox_text.buff_silence(0.5)
-	textbox_text.buff_text("We've never won a single case,", 0.07)
-	textbox_text.buff_text(" but that's why we're so cheap! ", 0.01)
+	textbox_text.buff_text("I calculate a 110% chance of catastrophic engine failure!,", 0.07)
+	textbox_text.buff_text("I dont care! Get me that warp vector so we live to see another day! ", 0.01)
 	textbox_text.buff_silence(2.5)
-	textbox_text.buff_text("Call now!", 0.02)
+	textbox_text.buff_text("!", 0.02)
 	textbox_text.buff_silence(2.5)
 	textbox_text.set_state(textbox_text.STATE_OUTPUT)
 
