@@ -68,7 +68,7 @@ func build(start_loc):
 	get_node("CollisionShape2D").set_shape(tempcircle)
 	
 
-func _process(delta):
+func _fixed_process(delta):
 	#get_node("meteor").set_pos(met_loc)
 	met_loc -= Vector2(met_vel*delta, 0)
 	set_pos(met_loc)
@@ -80,7 +80,8 @@ func destroy():
 	queue_free()
 
 func _on_visibility_enter_screen():
-	set_process(true)
+	#set_process(true)
+	set_fixed_process(true)
 
 
 

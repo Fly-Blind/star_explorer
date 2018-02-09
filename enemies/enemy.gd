@@ -33,7 +33,7 @@ func build(start):
 	screen_size = start
 	#stomp_it = round(rand_range(2, 4))
 
-func _process(delta):
+func _fixed_process(delta):
 	var cur_pos = get_pos()
 	if (cur_pos.x <= (start_posx - (screen_size.x/stomp_it))):
 		enemy_vel += enemy_accel
@@ -48,7 +48,8 @@ func destroy():
 	queue_free()
 
 func _on_visibility_enter_screen():
-	set_process(true)
+#	set_process(true)
+	set_fixed_process(true)
 
 
 

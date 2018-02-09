@@ -18,7 +18,7 @@ func _ready():
 	# Initialization here
 	pass
 
-func _process(delta):
+func _fixed_process(delta):
 	pass
 
 func destroy():
@@ -26,7 +26,7 @@ func destroy():
 	queue_free()
 
 func _on_visibility_enter_screen():
-	set_process(true)
+	set_fixed_process(true)
 
 
 
