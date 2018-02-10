@@ -19,7 +19,6 @@ func _ready():
 	set_process(true) #set the node to perform a task once per frame
 
 
-
 func build(start, end):
 		get_node("blast").set_pos(start) #set the beginning of the laser blast
 		end_loc = end #set the end where the node must unload itself

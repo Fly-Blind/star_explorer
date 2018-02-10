@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 51.3706, 28.0038 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,11 +14,10 @@ script/script = ExtResource( 1 )
 
 [node name="ship" type="Area2D" parent="."]
 
-transform/pos = Vector2( 35, 271 )
-transform/rot = -0.1
+transform/pos = Vector2( 300, 300 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 4.8791, 0, 0, 2.97292, 15.3677, 2.13408 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.780926, -0.494296 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -33,27 +32,13 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ship"]
 
-transform/pos = Vector2( 15.3677, 2.13408 )
-transform/scale = Vector2( 4.8791, 2.97292 )
+transform/pos = Vector2( -0.780926, -0.494296 )
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Label" type="Label" parent="."]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 759.0
-margin/top = 451.0
-margin/right = 880.0
-margin/bottom = 515.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [connection signal="area_enter" from="ship" to="." method="_on_ship_area_enter"]
+
+[connection signal="body_enter_shape" from="ship" to="." method="_on_ship_body_enter_shape"]
 
 

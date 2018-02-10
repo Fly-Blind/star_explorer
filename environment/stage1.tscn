@@ -1,0 +1,490 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://environment/stage1.gd" type="Script" id=1]
+[ext_resource path="res://obstacles/meteors/meteor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemies/enemy.tscn" type="PackedScene" id=3]
+
+[node name="level1" type="Node2D"]
+
+script/script = ExtResource( 1 )
+shuffle = 120
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = null
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray(  )
+
+[node name="meteor1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5111.79, 313.403 )
+
+[node name="meteor34 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 19803.6, 320.084 )
+
+[node name="meteor5" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5123.98, 164.926 )
+
+[node name="meteor34 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 19815.8, 171.607 )
+
+[node name="meteor6" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 4942.26, 261.325 )
+
+[node name="meteor34" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 19634.1, 268.006 )
+
+[node name="meteor7" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5087.42, 458.555 )
+
+[node name="meteor34 4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 19779.2, 465.236 )
+
+[node name="meteor8" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5299.05, 118.389 )
+
+[node name="meteor34 6" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 19990.8, 125.07 )
+
+[node name="meteor9" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5275.78, 440.826 )
+
+[node name="meteor34 5" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 19967.6, 447.507 )
+
+[node name="meteor10" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 10847.9, 242.189 )
+
+[node name="meteor11" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 8207.4, 214.791 )
+
+[node name="meteor35" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 22137.4, 239.844 )
+
+[node name="meteor12" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 9710.88, 543.57 )
+
+[node name="meteor35 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 23640.9, 568.623 )
+
+[node name="meteor13" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11328.4, 429.962 )
+
+[node name="meteor14" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 9420.68, 351.191 )
+
+[node name="meteor35 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 23350.7, 376.244 )
+
+[node name="meteor15" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 9936.78, 178.102 )
+
+[node name="meteor16" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 10014.1, 471.735 )
+
+[node name="meteor17" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 8678.83, 493.371 )
+
+[node name="meteor35 4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 22608.9, 518.424 )
+
+[node name="meteor18" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 8694.28, 122.467 )
+
+[node name="meteor35 5" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 22624.3, 147.52 )
+
+[node name="meteor19" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 8994.1, 468.644 )
+
+[node name="meteor35 6" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 22924.1, 493.697 )
+
+[node name="meteor20" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 8001.93, 536.643 )
+
+[node name="meteor35 7" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 21932, 561.696 )
+
+[node name="meteor21" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 9167.18, 141.012 )
+
+[node name="meteor35 8" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 23097.2, 166.065 )
+
+[node name="meteor22" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 8382.11, 406.827 )
+
+[node name="meteor35 9" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 22312.2, 431.88 )
+
+[node name="meteor23" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 7309.57, 246.102 )
+
+[node name="meteor24" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 7680.48, 119.376 )
+
+[node name="meteor25" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 7368.3, 576.825 )
+
+[node name="meteor26" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 6965.53, 128.361 )
+
+[node name="meteor27" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 6634.23, 481.824 )
+
+[node name="meteor34 7" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 21326, 488.505 )
+
+[node name="meteor28" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 6399.33, 105.092 )
+
+[node name="meteor34 8" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 21091.1, 111.773 )
+
+[node name="meteor29" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 6075.78, 251.353 )
+
+[node name="meteor34 9" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 20767.6, 258.034 )
+
+[node name="meteor30" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 6265.26, 541.658 )
+
+[node name="meteor34 10" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 20957.1, 548.339 )
+
+[node name="meteor31" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5916.22, 112.849 )
+
+[node name="meteor34 11" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 20608, 119.53 )
+
+[node name="meteor32" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5559.44, 609.248 )
+
+[node name="meteor34 12" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 20251.2, 615.929 )
+
+[node name="meteor33" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5545.03, 322.267 )
+
+[node name="meteor34 13" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 20236.8, 328.948 )
+
+[node name="meteor2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 3956.31, 333.694 )
+
+[node name="meteor3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 4177.94, 80.2809 )
+
+[node name="meteor4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 3562.16, 1025.33 )
+
+[node name="enemy1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 5635.4, 195.709 )
+
+[node name="enemy55" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 20327.2, 202.39 )
+
+[node name="enemy6" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 5951.19, 484.906 )
+
+[node name="enemy55 2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 20643, 491.587 )
+
+[node name="enemy2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 7034.56, 440.511 )
+
+[node name="enemy13" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 11367.4, 243.659 )
+
+[node name="enemy14" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 11199.2, 100.12 )
+
+[node name="enemy15" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 11533.5, 364.641 )
+
+[node name="enemy16" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 7145.29, 196.496 )
+
+[node name="enemy17" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 7698.94, 463.067 )
+
+[node name="enemy5" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 11695.5, 499.977 )
+
+[node name="enemy18" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 13637.5, 565.118 )
+
+[node name="enemy28" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15403, 95.5634 )
+
+[node name="enemy41" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 14708.2, 452.982 )
+
+[node name="enemy42" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 14721.5, 287.634 )
+
+[node name="enemy43" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 16174.6, 295.985 )
+
+[node name="enemy44" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15790.5, 210.806 )
+
+[node name="enemy45" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 16049.3, 381.165 )
+
+[node name="enemy46" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15274.4, 133.978 )
+
+[node name="enemy47" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15120.7, 179.073 )
+
+[node name="enemy48" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 16164.6, 468.014 )
+
+[node name="enemy49" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15256, 275.943 )
+
+[node name="enemy50" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15676.9, 133.978 )
+
+[node name="enemy52" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15670.2, 285.964 )
+
+[node name="enemy53" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 14850.1, 406.217 )
+
+[node name="enemy54" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15541.6, 105.585 )
+
+[node name="enemy29" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 16042.8, 217.153 )
+
+[node name="enemy30" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 16162.4, 124.303 )
+
+[node name="enemy31" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15917.5, 305.77 )
+
+[node name="enemy32" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15799.7, 367.272 )
+
+[node name="enemy33" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 14873.5, 214.488 )
+
+[node name="enemy34" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 14982.8, 302.529 )
+
+[node name="enemy35" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15392.5, 444.449 )
+
+[node name="enemy36" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15672.7, 402.952 )
+
+[node name="enemy37" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15535, 442.891 )
+
+[node name="enemy38" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15244.4, 416.765 )
+
+[node name="enemy39" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 14778.7, 122.908 )
+
+[node name="enemy40" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 15109.7, 373.869 )
+
+[node name="enemy19" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 13641.4, 55.0083 )
+
+[node name="enemy20" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 13493, 502.536 )
+
+[node name="enemy21" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 13214.1, 301.556 )
+
+[node name="enemy22" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 13510.2, 126.777 )
+
+[node name="enemy23" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 13356, 201.472 )
+
+[node name="enemy24" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 13350.7, 412.299 )
+
+[node name="enemy25" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12202, 108.323 )
+
+[node name="enemy26" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12023.6, 243.659 )
+
+[node name="enemy27" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 11865.7, 364.641 )
+
+[node name="enemy9" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 8854.24, 543.719 )
+
+[node name="enemy56" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 22784.3, 568.772 )
+
+[node name="enemy10" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 8858.47, 389.166 )
+
+[node name="enemy56 2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 22788.5, 414.219 )
+
+[node name="enemy11" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 8859.27, 239.144 )
+
+[node name="enemy56 3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 22789.3, 264.197 )
+
+[node name="enemy12" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 8860.07, 81.4216 )
+
+[node name="enemy56 4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 22790.1, 106.474 )
+
+[node name="enemy3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 4635.83, 537.801 )
+
+[node name="enemy7" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 4973.78, 104.56 )
+
+[node name="enemy55 3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 19665.6, 111.241 )
+
+[node name="enemy4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3576.61, 540.49 )
+
+[node name="enemy8" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 4326.74, 298.939 )
+
+
