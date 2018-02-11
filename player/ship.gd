@@ -29,15 +29,15 @@ func _ready():
 	ship_size = get_node("ship/sprite").get_texture().get_size()
 	ship_loc = get_node("ship").get_pos()
 	ship_loc_start = ship_loc
-<<<<<<< HEAD
-	blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
-	#set_process(true) #set this script to call the _process function every frame draw
-	set_fixed_process(true)
-=======
+#<<<<<<< HEAD
+#	blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
+#	#set_process(true) #set this script to call the _process function every frame draw
+#	set_fixed_process(true)
+#=======
 	#blast_resource = preload("res://player/energy_blast.tscn") # pre-load the energy-blast resource so it can be used repeatedly
 	blast_resource = preload("res://player/laser_blast.tscn")
-	set_process(true) #set this script to call the _process function every frame draw
->>>>>>> 2db88b2166d72ec79c5eae8431d117237104aed5
+	set_fixed_process(true) #set this script to call the _process function every frame draw
+#>>>>>>> 2db88b2166d72ec79c5eae8431d117237104aed5
 	set_process_input(true) #set this script to execute the _input function every time input happens
 
 
@@ -67,37 +67,8 @@ func _fixed_process(delta):
 		ship_loc.x -= (SHIP_SPEED_Y + 20)*delta
 		get_node("ship").set_pos(ship_loc)
 		is_ship_moving = true
-	 #Now to start the spongy feeling in the game
-	if !is_ship_moving and ship_loc!=ship_loc_start:
-		#I did a nested if, and I hate myself for it.
-		#X Block Negative. Compounds as the ship gets farther away from origin
-		if ship_loc.x > ship_loc_start.x - 50:
-			get_node("ship").translate(Vector2(-1 + sponge_strength,0))
-		if ship_loc.x > ship_loc_start.x - 20:
-			get_node("ship").translate(Vector2(-1 + sponge_strength,0))
-		if ship_loc.x > ship_loc_start.x:
-			get_node("ship").translate(Vector2(-1,0))
-		#Same as above, but Y
-		if ship_loc.y > ship_loc_start.y - 50:
-			get_node("ship").translate(Vector2(0,-1 + sponge_strength))
-		if ship_loc.y > ship_loc_start.y - 20:
-			get_node("ship").translate(Vector2(0,-1 + sponge_strength))
-		if ship_loc.y > ship_loc_start.y:
-			get_node("ship").translate(Vector2(0,-1))
-		# Same as above, but positive X
-		if ship_loc.x < ship_loc_start.x + 50:
-			get_node("ship").translate(Vector2(1 + sponge_strength,0))
-		if ship_loc.x < ship_loc_start.x + 20:
-			get_node("ship").translate(Vector2(1 + sponge_strength,0))
-		if ship_loc.x < ship_loc_start.x:
-			get_node("ship").translate(Vector2(1,0))
-		#...Well, you get it.
-		if ship_loc.y < ship_loc_start.y + 50:
-			get_node("ship").translate(Vector2(0,1 + sponge_strength))
-		if ship_loc.y < ship_loc_start.y + 20:
-			get_node("ship").translate(Vector2(0,1 + sponge_strength))
-		if ship_loc.y < ship_loc_start.y:
-			get_node("ship").translate(Vector2(0,1))
+	
+	
 	
 
 

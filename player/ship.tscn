@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://player/ship.gd" type="Script" id=1]
 [ext_resource path="res://player/ship.png" type="Texture" id=2]
+[ext_resource path="res://player/flames.png" type="Texture" id=3]
+[ext_resource path="res://player/ship.tres" type="Animation" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -30,12 +32,32 @@ process/pause_mode = 2
 transform/pos = Vector2( 1.10074, 0.416336 )
 texture = ExtResource( 2 )
 
+[node name="Sprite" type="Sprite" parent="ship/sprite"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( -22.0296, 6.37686 )
+transform/scale = Vector2( 0.809783, 1.2293 )
+texture = ExtResource( 3 )
+hframes = 8
+frame = 6
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ship"]
 
 transform/pos = Vector2( -0.780926, -0.494296 )
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
+
+[node name="FlamePlayer" type="AnimationPlayer" parent="ship"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+"anims/Flame Animation" = ExtResource( 4 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "Flame Animation"
 
 [connection signal="area_enter" from="ship" to="." method="_on_ship_area_enter"]
 
