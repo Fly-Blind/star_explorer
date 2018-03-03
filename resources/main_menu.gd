@@ -10,7 +10,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	#pass
-	start = preload("res://mov/l1_intro.tscn")
+	start = preload("res://mov/prologue.tscn")
 	options = preload("res://resources/options_menu.tscn")
 	high_score = preload("res://resources/high_score.tscn")
 
