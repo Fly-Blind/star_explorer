@@ -165,6 +165,7 @@ INPUT_CHARACTERS_LIMIT = -1
 
 [node name="faceright" type="TextureFrame" parent="boxframe"]
 
+visibility/opacity = 2.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2

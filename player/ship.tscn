@@ -31,11 +31,12 @@ angular_damp = 1.0
 process/pause_mode = 2
 transform/pos = Vector2( 1.10074, 0.416336 )
 texture = ExtResource( 2 )
+hframes = 8
 
 [node name="Sprite" type="Sprite" parent="ship/sprite"]
 
 visibility/behind_parent = true
-transform/pos = Vector2( -22.0296, 6.37686 )
+transform/pos = Vector2( -12.394, -0.0469055 )
 transform/scale = Vector2( 0.809783, 1.2293 )
 texture = ExtResource( 3 )
 hframes = 8
