@@ -12,6 +12,7 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var enemy_value = 100
 const MET_CONST = 250 #a constant for the velocity of a meteor
 var met_vel = 0 #a velocity variable for this instance of the meteor after we fiddle with velocity a bit.
 var met_loc #a variable for the location of the meteor
@@ -77,6 +78,7 @@ func _fixed_process(delta):
 	#	queue_free()
 
 func destroy():
+	get_node("/root/core").score += enemy_value
 	queue_free()
 
 func _on_visibility_enter_screen():

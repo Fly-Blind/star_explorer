@@ -11,6 +11,7 @@ extends Area2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var enemy_value = 400
 var speeder_vel = 400 # a variable for the speeder ship to start.
 var speeder_accel = 30 #a variable 
 func _ready():
@@ -22,6 +23,7 @@ func _fixed_process(delta):
 	pass
 
 func destroy():
+	get_node("/root/core").score += enemy_value
 	#holds unload function, but can call other functions if needed later.
 	queue_free()
 

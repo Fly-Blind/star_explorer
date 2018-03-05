@@ -12,6 +12,7 @@ extends Area2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var enemy_value = 250
 var ufo_pos # a variable for where the UFO is currently
 const UFO_VEL = -300 # a vartiable for the UFO's velocity
 var hover = 0 # used as part of a Sine function to make the UFO wave up and down
