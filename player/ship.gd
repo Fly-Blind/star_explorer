@@ -26,7 +26,8 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	screen_size = get_viewport_rect().size
-	ship_size = get_node("ship/sprite").get_texture().get_size()
+	#ship_size = get_node("ship/sprite").get_texture().get_size()
+	ship_size = Vector2(128, 64)
 	ship_loc = get_node("ship").get_pos()
 	ship_loc_start = ship_loc
 #<<<<<<< HEAD
@@ -68,7 +69,8 @@ func _fixed_process(delta):
 		get_node("ship").set_pos(ship_loc)
 		is_ship_moving = true
 	
-	
+	get_node("Label").set_text(str(get_node("/root/core").score))
+	#^ ^ TODO: Make this event driven, not per cycle.
 	
 
 

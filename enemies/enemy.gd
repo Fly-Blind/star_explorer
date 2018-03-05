@@ -11,6 +11,7 @@ extends Area2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var enemy_value = 300
 var enemy_vel = 350 #current running speed of the enemy jet.
 var enemy_accel = 10 # used to determine the enemy's speed when they "Stomp it"
 var screen_size # Holds the size of the screen, may not be needed soon
@@ -44,6 +45,7 @@ func _fixed_process(delta):
 	set_pos(cur_pos)
 
 func destroy():
+	get_node("/root/core").score += enemy_value
 	#unloading of the object, and other fancy destroy stuff later.
 	queue_free()
 
