@@ -92,7 +92,7 @@ func _input(event):
 		#fire_flip_flop = false
 
 func _on_ship_area_enter( area ):
-	if area.has_method("destroy"):
+	if area.has_method("destroy") and "is_exploding" in area and !area.is_exploding:
 		area.destroy()
 		destroy()
 	print( "thing hit: ", area)
@@ -106,7 +106,7 @@ func destroy():
 
 func _on_ship_body_enter_shape( body_id, body, body_shape, area_shape ):
 	print("Body hit: ", body)
-	if body.has_method("destroy"):
+	if body.has_method("destroy") and "is_exploding" in body and !body.is_exploding:
 		body.destroy()
 		destroy()
 

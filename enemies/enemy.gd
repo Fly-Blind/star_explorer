@@ -18,6 +18,7 @@ var screen_size # Holds the size of the screen, may not be needed soon
 var stomp_it # used to determine when on the screen the enemy should "Stomp it" (as the bottom half of a fraction)
 var end_posx # used to determine the end of the screen in relation to this object's X location
 var start_posx
+var is_exploding = false
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -47,6 +48,7 @@ func _fixed_process(delta):
 func destroy():
 	get_node("/root/core").score += enemy_value
 	#unloading of the object, and other fancy destroy stuff later.
+	is_exploding = true
 	queue_free()
 
 func _on_visibility_enter_screen():

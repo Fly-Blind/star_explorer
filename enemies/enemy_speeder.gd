@@ -14,6 +14,7 @@ extends Area2D
 var enemy_value = 400
 var speeder_vel = 400 # a variable for the speeder ship to start.
 var speeder_accel = 30 #a variable 
+var is_exploding = false
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -25,6 +26,7 @@ func _fixed_process(delta):
 func destroy():
 	get_node("/root/core").score += enemy_value
 	#holds unload function, but can call other functions if needed later.
+	is_exploding = true
 	queue_free()
 
 func _on_visibility_enter_screen():
