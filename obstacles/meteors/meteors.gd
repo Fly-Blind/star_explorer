@@ -18,7 +18,7 @@ var met_vel = 0 #a velocity variable for this instance of the meteor after we fi
 var met_loc #a variable for the location of the meteor
 var screen_size #a variable for the screen size.
 var met_rot_rate # a variable holding the rotation speed of the sprite.
-var is_exploding = false # used to check if thge meteor is currently going "boom"
+var is_exploding = false # used to check if the meteor is currently going "boom"
 
 const TEXTURE_ARR = [preload("res://obstacles/meteors/meteor1.png"),
  preload("res://obstacles/meteors/meteor2.png"),
@@ -80,9 +80,10 @@ func _fixed_process(delta):
 	#	queue_free()
 
 func destroy():
-	is_exploding = true
-	get_node("AnimationPlayer").play("explosione")
-	get_node("/root/core").score += enemy_value
+	if !is_exploding:
+		is_exploding = true
+		get_node("AnimationPlayer").play("explosione")
+		get_node("/root/core").score += enemy_value
 
 
 func _on_visibility_enter_screen():

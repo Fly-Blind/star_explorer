@@ -4,7 +4,7 @@
 
 resource/name = "explosione"
 length = 2.0
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("explosion:visibility/visible")
